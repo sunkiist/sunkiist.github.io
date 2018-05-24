@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -96,7 +96,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -183,101 +183,27 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-message">
-          <a href="/message" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            留言
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
       
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
   
 </nav>
 
@@ -377,54 +303,54 @@
       
         
           
-          标签 ： C++ 读书笔记
+            <p>标签 ： C++ 读书笔记</p>
+<hr>
+<h1 id="IO库"><a href="#IO库" class="headerlink" title="IO库"></a>IO库</h1><h2 id="IO库是用来做什么的"><a href="#IO库是用来做什么的" class="headerlink" title="IO库是用来做什么的"></a>IO库是用来做什么的</h2><blockquote>
+<p>处理输入输出，向设备读取或者写入数据，这些设备可以是文件、控制台窗口、string</p>
+</blockquote>
+<h2 id="IO库有哪些设施"><a href="#IO库有哪些设施" class="headerlink" title="IO库有哪些设施"></a>IO库有哪些设施</h2><p><img src="http://pic.yupoo.com/sunkiist/HlLicIHw/7jNUH.png" alt="图片"></p>
+<h2 id="IO类型间的关系"><a href="#IO类型间的关系" class="headerlink" title="IO类型间的关系"></a>IO类型间的关系</h2><p>无论是从控制台、文件读取对象；还是读取char或者string对象都使用一样的IO操作，这是因为IO标准库定义了<strong>继承机制</strong>，继承机制有一个特点就是派生类对象能像基类对象一样使用。</p>
+<p>因为iftream和istringstream都继承自istream，所以ifstream和istringstream对象的很多操作和istream一样，但是派生类也会有一些不同于基类的新功能。</p>
+<h1 id="IO类"><a href="#IO类" class="headerlink" title="IO类"></a>IO类</h1><h2 id="IO库特性"><a href="#IO库特性" class="headerlink" title="IO库特性"></a>IO库特性</h2><blockquote>
+<p>IO对象无拷贝或者赋值（函数的形参和返回类型不能是IO类型）<br>进行IO操作的函数通常以引用方式传递流类型<br>因为读写会改变IO所以传递返回的引用不能够是const类型</p>
+</blockquote>
+<h2 id="IO库的条件状态"><a href="#IO库的条件状态" class="headerlink" title="IO库的条件状态"></a>IO库的条件状态</h2><p>IO库的条件状态能够表示IO流是否出错，错误类型是什么，能否修复。<br>类型：</p>
+<blockquote>
+<p>iostate 表示条件状态<br>cin.rdstate() 返回iostate<br>badbit 表示系统级错误，一旦被置位不可用,此时failbit 也被置位<br>failbit 表示可恢复错误（比如输入类型不对）<br>eofbit 达到文件结束，同时 failbit也会被置位<br>goodbit 表示流未发生错误<br>cin.bad() 如果badbit被置位返回true</p>
+</blockquote>
+<p>注意：<br>badbit,failbit,eofbit任意一个被置位则流的状态检验<strong>while(cin&gt;&gt;word)</strong>会失败.<br><strong>while(cin&gt;&gt;word)</strong>相当于<strong>while(!=fail())</strong></p>
+<h2 id="管理条件状态"><a href="#管理条件状态" class="headerlink" title="管理条件状态"></a>管理条件状态</h2><h3 id="记录当前状态"><a href="#记录当前状态" class="headerlink" title="记录当前状态"></a>记录当前状态</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> old_state=<span class="built_in">cin</span>.rdstate();<span class="comment">//记住cin的当前状态</span></span><br></pre></td></tr></table></figure>
+<h3 id="置为原有状态"><a href="#置为原有状态" class="headerlink" title="置为原有状态"></a>置为原有状态</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cin</span>.setstate(old_state);<span class="comment">//将cin还原为原有状态</span></span><br></pre></td></tr></table></figure>
+<h3 id="清除所有错误标志位"><a href="#清除所有错误标志位" class="headerlink" title="清除所有错误标志位"></a>清除所有错误标志位</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cin</span>.clear();<span class="comment">//此时调用good会返回true</span></span><br></pre></td></tr></table></figure>
+<h3 id="复位单一的状态位"><a href="#复位单一的状态位" class="headerlink" title="复位单一的状态位"></a>复位单一的状态位</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cin</span>.clear(<span class="built_in">cin</span>.rdstate() &amp; ~<span class="built_in">cin</span>.failbit &amp; ~<span class="built_in">cin</span>.badbit);<span class="comment">//第一位读出当前状态，后面的按位复位</span></span><br></pre></td></tr></table></figure>
+<h2 id="管理输出缓冲"><a href="#管理输出缓冲" class="headerlink" title="管理输出缓冲"></a>管理输出缓冲</h2><h3 id="为什么有缓冲区："><a href="#为什么有缓冲区：" class="headerlink" title="为什么有缓冲区："></a>为什么有缓冲区：</h3><p>因为设备的写操作很费时，所以把多个输出操作组合成单一的写操作可以带来性能提升，由此引入缓冲区为多个输出操作提供缓存。</p>
+<p>比如:cout&lt;&lt;”hello”  字符串”hello”有可能被放入缓冲区</p>
+<h3 id="缓冲区刷新的原因："><a href="#缓冲区刷新的原因：" class="headerlink" title="缓冲区刷新的原因："></a>缓冲区刷新的原因：</h3><blockquote>
+<p>main函数return时<br>缓冲区满的时候，为了写入新的数据<br>显式刷新<br>关联流，会导致关联到的流刷新（cin和cerr关联cout，刷新时cout刷新）</p>
+</blockquote>
+<p>注：程序崩溃，缓冲区不会刷新，所以不会打印</p>
+<h3 id="缓冲区显式刷新的例子"><a href="#缓冲区显式刷新的例子" class="headerlink" title="缓冲区显式刷新的例子"></a>缓冲区显式刷新的例子</h3><blockquote>
+<p>endl 打印换行后刷新<br>flush 直接刷新<br>ends 打印空格后刷新<br>unitbuf 每次写立即刷新缓冲区<br>nounitbuf 回到正常模式</p>
+</blockquote>
+<h1 id="文件输入输出"><a href="#文件输入输出" class="headerlink" title="文件输入输出"></a>文件输入输出</h1><p>文件输入输出由fstream头文件管理，fstream由于继承自iostream所以大部分操作和iostream一样，但是有一些新的成员来管理文件</p>
+<h2 id="fstream特有操作"><a href="#fstream特有操作" class="headerlink" title="fstream特有操作"></a>fstream特有操作</h2><blockquote>
+<p>fstream f1; //定义一个未绑定的文件流f1<br>fstream f1(s); //把名为s的文件绑定到文件流f1<br>f1.open(s1); //与上同<br>f1.close();</p>
+</blockquote>
+<p>注：接收ostream&amp;的参数可以传递ofstream</p>
+<h3 id="成员函数open和close"><a href="#成员函数open和close" class="headerlink" title="成员函数open和close"></a>成员函数open和close</h3><p>检查open打开文件是否成功<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ofstream out;<span class="comment">//创建文件输出流</span></span><br><span class="line">out.open(file);<span class="comment">//将流与文件关联</span></span><br><span class="line"><span class="keyword">if</span>(out);<span class="comment">//检查open是否成功</span></span><br></pre></td></tr></table></figure></p>
+<p>注：不能两次open同一个文件流，需要先close。但是如果在局部作用域如for中，则不用close因为局部作用域自动创建销毁。</p>
+<h2 id="文件模式"><a href="#文件模式" class="headerlink" title="文件模式"></a>文件模式</h2><blockquote>
+<p>in以读的方式打开<br>out以写的方式打开<br>app每次写操作定位到文件末尾<br>ate打开文件后定位到文件末尾<br>trunc截断文件<br>binary以二进制的方式进行IO</p>
+</blockquote>
+<h3 id="ofstram默认被截断"><a href="#ofstram默认被截断" class="headerlink" title="ofstram默认被截断"></a>ofstram默认被截断</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ofstream <span class="title">out</span><span class="params">(<span class="string">"file1"</span>)</span></span>;</span><br><span class="line"><span class="function">ofstream <span class="title">out</span><span class="params">(<span class="string">"file1"</span>,ofstream::out)</span></span>;</span><br><span class="line"><span class="function">ofstream <span class="title">out</span><span class="params">(<span class="string">"file1"</span>,ofstream::out|ofstream::trunc)</span></span>;<span class="comment">//以上三种均被截断</span></span><br><span class="line">......................................................................................</span><br><span class="line"><span class="function">ofstream <span class="title">out</span><span class="params">(<span class="string">"file1"</span>,ofstream::out|ofstream::app)</span></span>;</span><br><span class="line"></span><br><span class="line">ofstream out;</span><br><span class="line">out.open(<span class="string">"file1"</span>,ofstream::app);<span class="comment">//以上两种不会被覆盖。用app可以保留之前写的文件内容，下一次写从末尾开始</span></span><br></pre></td></tr></table></figure>
+<h1 id="string流"><a href="#string流" class="headerlink" title="string流"></a>string流</h1><p>string流由头文件sstream管理，头文件有ostringstream、istringstream、stringstream三个类</p>
+<h2 id="stringstream特有操作"><a href="#stringstream特有操作" class="headerlink" title="stringstream特有操作"></a>stringstream特有操作</h2><blockquote>
+<p>sstream strm;//定义一个string流<br>sstream strm(s);//定义一个string流保存string s的一个拷贝<br>strm.str();//返回strm保存的string拷贝<br>strm.str(s);//将s这个string的拷贝保存到strm这个流对象，返回void</p>
+</blockquote>
+<h2 id="使用istringstream"><a href="#使用istringstream" class="headerlink" title="使用istringstream"></a>使用istringstream</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PersonInfo</span>&#123;</span></span><br><span class="line">    <span class="built_in">string</span> name;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; phones;</span><br><span class="line">&#125;;<span class="comment">//定义一个结构体每个人有多个电话号码</span></span><br><span class="line">...</span><br><span class="line"><span class="built_in">string</span> line,word;</span><br><span class="line"><span class="built_in">vector</span>&lt;PersonInfo&gt; people;      <span class="comment">//用于存储多个结构体信息</span></span><br><span class="line"><span class="keyword">while</span>(getline(<span class="built_in">cin</span>,line))&#123;       <span class="comment">//每次从控制台读取一行给line这个string</span></span><br><span class="line">    PersonInfo info;            <span class="comment">//定义一个保存记录的对象</span></span><br><span class="line">    <span class="function"><span class="built_in">istringstream</span> <span class="title">record</span><span class="params">(line)</span></span>; <span class="comment">//将记录绑定到刚刚读入的行</span></span><br><span class="line">    record&gt;&gt;info.name();        <span class="comment">//读取名字</span></span><br><span class="line">    <span class="keyword">while</span>(record&gt;&gt;word)         <span class="comment">//读取多个电话号码</span></span><br><span class="line">        info.phones.push_back(word);</span><br><span class="line">    people.push_back(info);     <span class="comment">//将所有记录保存</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用ostringstream"><a href="#使用ostringstream" class="headerlink" title="使用ostringstream"></a>使用ostringstream</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ostringstream</span> os;</span><br><span class="line"><span class="built_in">string</span> str1=<span class="string">"hello"</span>;</span><br><span class="line"><span class="built_in">string</span> str2=<span class="string">"world"</span>;</span><br><span class="line">os&lt;&lt;str1&lt;&lt;<span class="string">" "</span>&lt;&lt;str2;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;os.str()&lt;&lt;<span class="built_in">endl</span>; <span class="comment">//输出hello world</span></span><br></pre></td></tr></table></figure>
 
-IO库IO库是用来做什么的
-处理输入输出，向设备读取或者写入数据，这些设备可以是文件、控制台窗口、string
-
-IO库有哪些设施
-IO类型间的关系无论是从控制台、文件读取对象；还是读取char或者string对象都使用一样的IO操作，这是因为IO标准库定义了继承机制，继承机制有一个特点就是派生类对象能像基类对象一样使用。
-因为iftream和istringstream都继承自istream，所以ifstream和istringstream对象的很多操作和istream一样，但是派生类也会有一些不同于基类的新功能。
-IO类IO库特性
-IO对象无拷贝或者赋值（函数的形参和返回类型不能是IO类型）进行IO操作的函数通常以引用方式传递流类型因为读写会改变IO所以传递返回的引用不能够是const类型
-
-IO库的条件状态IO库的条件状态能够表示IO流是否出错，错误类型是什么，能否修复。类型：
-
-iostate 表示条件状态cin.rdstate() 返回iostatebadbit 表示系统级错误，一旦被置位不可用,此时failbit 也被置位failbit 表示可恢复错误（比如输入类型不对）eofbit 达到文件结束，同时 failbit也会被置位goodbit 表示流未发生错误cin.bad() 如果badbit被置位返回true
-
-注意：badbit,failbit,eofbit任意一个被置位则流的状态检验while(cin&gt;&gt;word)会失败.while(cin&gt;&gt;word)相当于while(!=fail())
-管理条件状态记录当前状态1auto old_state=cin.rdstate();//记住cin的当前状态
-置为原有状态1cin.setstate(old_state);//将cin还原为原有状态
-清除所有错误标志位1cin.clear();//此时调用good会返回true
-复位单一的状态位1cin.clear(cin.rdstate() &amp; ~cin.failbit &amp; ~cin.badbit);//第一位读出当前状态，后面的按位复位
-管理输出缓冲为什么有缓冲区：因为设备的写操作很费时，所以把多个输出操作组合成单一的写操作可以带来性能提升，由此引入缓冲区为多个输出操作提供缓存。
-比如:cout&lt;&lt;”hello”  字符串”hello”有可能被放入缓冲区
-缓冲区刷新的原因：
-main函数return时缓冲区满的时候，为了写入新的数据显式刷新关联流，会导致关联到的流刷新（cin和cerr关联cout，刷新时cout刷新）
-
-注：程序崩溃，缓冲区不会刷新，所以不会打印
-缓冲区显式刷新的例子
-endl 打印换行后刷新flush 直接刷新ends 打印空格后刷新unitbuf 每次写立即刷新缓冲区nounitbuf 回到正常模式
-
-文件输入输出文件输入输出由fstream头文件管理，fstream由于继承自iostream所以大部分操作和iostream一样，但是有一些新的成员来管理文件
-fstream特有操作
-fstream f1; //定义一个未绑定的文件流f1fstream f1(s); //把名为s的文件绑定到文件流f1f1.open(s1); //与上同f1.close();
-
-注：接收ostream&amp;的参数可以传递ofstream
-成员函数open和close检查open打开文件是否成功123ofstream out;//创建文件输出流out.open(file);//将流与文件关联if(out);//检查open是否成功
-注：不能两次open同一个文件流，需要先close。但是如果在局部作用域如for中，则不用close因为局部作用域自动创建销毁。
-文件模式
-in以读的方式打开out以写的方式打开app每次写操作定位到文件末尾ate打开文件后定位到文件末尾trunc截断文件binary以二进制的方式进行IO
-
-ofstram默认被截断12345678ofstream out("file1");ofstream out("file1",ofstream::out);ofstream out("file1",ofstream::out|ofstream::trunc);//以上三种均被截断......................................................................................ofstream out("file1",ofstream::out|ofstream::app);ofstream out;out.open("file1",ofstrea
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/18/C++ primer第八章笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -542,24 +468,17 @@ ofstram默认被截断12345678ofstream out("file1");ofstream out("file1",ofstrea
       
         
           
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy to remote sites1$ hexo deploy
-More info: Deployment
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/08/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -637,7 +556,7 @@ More info: Deployment
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives">
+                <a href="/archives/">
               
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
@@ -717,7 +636,7 @@ More info: Deployment
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -764,8 +683,6 @@ More info: Deployment
   
 
 
-  
-
 
 
 
@@ -804,11 +721,6 @@ More info: Deployment
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -867,323 +779,6 @@ More info: Deployment
 
 
   
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
 
