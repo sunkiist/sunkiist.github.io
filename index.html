@@ -341,7 +341,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  757
                 </span>
               
 
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -380,7 +380,32 @@
       
         
           
-            
+            <hr>
+<p>title: 算法之二分查找法<br>date: 2018-05-28 23:38:46<br>tags:</p>
+<ul>
+<li>算法</li>
+</ul>
+<hr>
+<h1 id="二分查找法简介"><a href="#二分查找法简介" class="headerlink" title="二分查找法简介"></a>二分查找法简介</h1><p>二分查找法是一种适用于<strong>有序数组</strong>的算法，因为每次折半查找所以其时间复杂度是<strong>O(logn)</strong>。<br>二分查找的思路是每次与范围中间的值比较，判断所要查找的值和中间值的大小，缩短判断范围，直到找到所要查找的值为止。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BinarySearch</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> length, <span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> high = length<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">		<span class="keyword">int</span> mid = low + (high - low) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (num &lt; a[mid])high = mid - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (num &gt; a[mid])low = mid + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> mid;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>算法学习很重要的一点是它分为三个方面：</p>
+<blockquote>
+<p>1、理解人使用这个方法的思路<br>2、懂得把方法思路转化为程序语言<br>3、理解算法的优势、能力，以便于在适当场景应用</p>
+</blockquote>
+<p>很可惜的是我们总是停留在第一个阶段，所以下面我打算人为尝试一下从第一个阶段走到第二个阶段。</p>
+<h1 id="怎样把方法思路转化为程序语言"><a href="#怎样把方法思路转化为程序语言" class="headerlink" title="怎样把方法思路转化为程序语言"></a>怎样把方法思路转化为程序语言</h1><blockquote>
+<p>每次与范围中间值比较…..直到找到所要查找的值为止</p>
+</blockquote>
+<p>多次比较我们显然可以想到循环，比较可能是关系运算符&lt;,&gt;,==。直到找到所要查找的值为止，直到….为止在程序语言中相当于退出循环，而决定循环退出的条件的就只能是违背花括号则退出，可推测得<strong>while(low&lt;=high)</strong><br>刚才说过算法的思路如下：</p>
+<p>我们再分析所使用到的数据结构</p>
+<blockquote>
+<p>所要查找的值、中间值</p>
+</blockquote>
+<p>所要查找的值可以直接传进函数，那么这个中间值怎么得到呢？我们需要一个值记录开头的值，一个值记录末尾的值，然后除以2，又由于这个开头的值在循环中只是“相对开头”，所以还要加上其前面的内容，又由于这个中间值是随着查找次数不同变化的，所以显然要在循环内部。</p>
+<blockquote>
+<p>判断所要查找的值和中间值的大小，缩短判断范围</p>
+</blockquote>
+<p>所谓判断所要查找的值和中间值的大小，关键词是<strong>判断</strong>，表示判断的程序语言是if else语句，那么这值因为是不定的所以它和中间值比较有三种可能性，小于、大于、等于中间值，所以我们能够得到if… else if…else的语句框架，至于缩短判断范围则根据这三种框架有所不同。最简单的一种是这个值刚好等于中间值，此时两者相等，返回中间值即可；如果要查找的值小于中间值，那么中间值和中间值后面的范围可以舍弃掉所以high=mid-1;同理，所查找的值大于中间值则low=mid+1;</p>
+
           
         
       
@@ -1809,7 +1834,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1911,7 +1936,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共1.9k字</span>
+  <span class="post-count">博客全站共2.7k字</span>
 </div>
 
         
