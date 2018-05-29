@@ -341,7 +341,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  757
+                  738
                 </span>
               
 
@@ -380,13 +380,7 @@
       
         
           
-            <hr>
-<p>title: 算法之二分查找法<br>date: 2018-05-28 23:38:46<br>tags:</p>
-<ul>
-<li>算法</li>
-</ul>
-<hr>
-<h1 id="二分查找法简介"><a href="#二分查找法简介" class="headerlink" title="二分查找法简介"></a>二分查找法简介</h1><p>二分查找法是一种适用于<strong>有序数组</strong>的算法，因为每次折半查找所以其时间复杂度是<strong>O(logn)</strong>。<br>二分查找的思路是每次与范围中间的值比较，判断所要查找的值和中间值的大小，缩短判断范围，直到找到所要查找的值为止。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BinarySearch</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> length, <span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> high = length<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">		<span class="keyword">int</span> mid = low + (high - low) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (num &lt; a[mid])high = mid - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (num &gt; a[mid])low = mid + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> mid;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <h1 id="二分查找法简介"><a href="#二分查找法简介" class="headerlink" title="二分查找法简介"></a>二分查找法简介</h1><p>二分查找法是一种适用于<strong>有序数组</strong>的算法，因为每次折半查找所以其时间复杂度是<strong>O(logn)</strong>。<br>二分查找的思路是每次与范围中间的值比较，判断所要查找的值和中间值的大小，缩短判断范围，直到找到所要查找的值为止。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BinarySearch</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> length, <span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> high = length<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">		<span class="keyword">int</span> mid = low + (high - low) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (num &lt; a[mid])high = mid - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (num &gt; a[mid])low = mid + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> mid;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>算法学习很重要的一点是它分为三个方面：</p>
 <blockquote>
 <p>1、理解人使用这个方法的思路<br>2、懂得把方法思路转化为程序语言<br>3、理解算法的优势、能力，以便于在适当场景应用</p>
@@ -1655,7 +1649,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,294
+                  1,287
                 </span>
               
 
@@ -1694,9 +1688,7 @@
       
         
           
-            <p>标签 ： C++ 读书笔记</p>
-<hr>
-<h1 id="IO库"><a href="#IO库" class="headerlink" title="IO库"></a>IO库</h1><h2 id="IO库是用来做什么的"><a href="#IO库是用来做什么的" class="headerlink" title="IO库是用来做什么的"></a>IO库是用来做什么的</h2><blockquote>
+            <h1 id="IO库"><a href="#IO库" class="headerlink" title="IO库"></a>IO库</h1><h2 id="IO库是用来做什么的"><a href="#IO库是用来做什么的" class="headerlink" title="IO库是用来做什么的"></a>IO库是用来做什么的</h2><blockquote>
 <p>处理输入输出，向设备读取或者写入数据，这些设备可以是文件、控制台窗口、string</p>
 </blockquote>
 <h2 id="IO库有哪些设施"><a href="#IO库有哪些设施" class="headerlink" title="IO库有哪些设施"></a>IO库有哪些设施</h2><p><img src="http://pic.yupoo.com/sunkiist/HlLicIHw/7jNUH.png" alt="图片"></p>
@@ -1936,7 +1928,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.7k字</span>
+  <span class="post-count">博客全站共2.6k字</span>
 </div>
 
         
