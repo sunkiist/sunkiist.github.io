@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="本篇笔记主要是介绍linux文件管理命令中关于文件复制、剪切、移动的内容 cp 用途： 复制文件到指定位置&amp;nbsp;        用法： cp 源 目标&amp;nbsp;   使用规则: cp file1 file2 file3 //前面个默认都为源，最后一个是目标 只能支持复制一个文件到一个文件，多个文件到一个目录，不允许合并文件 如果目标是一个目录并且存在，将源文件复制目标目录，并且保持原名 如">
+<meta name="description" content="本篇笔记主要是介绍linux文件管理命令、目录管理命令 文件管理touch 用途： 创建文件，改变时间戳   用法： touch 文件名   相关选项： touch -c：不创建文件只改变时间戳 touch -a：改变访问时间和改变时间 touch -m：改变修改时间和改变时间 touch -t：修改到指定时间&amp;nbsp;nano   用途： 通过文本编辑器创建文件&amp;nbsp;stat   用途：">
 <meta name="keywords" content="linux,linux命令,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux文件管理命令笔记">
 <meta property="og:url" content="http://yoursite.com/2018/05/28/linux文件管理命令笔记/index.html">
 <meta property="og:site_name" content="sunkist的blog">
-<meta property="og:description" content="本篇笔记主要是介绍linux文件管理命令中关于文件复制、剪切、移动的内容 cp 用途： 复制文件到指定位置&amp;nbsp;        用法： cp 源 目标&amp;nbsp;   使用规则: cp file1 file2 file3 //前面个默认都为源，最后一个是目标 只能支持复制一个文件到一个文件，多个文件到一个目录，不允许合并文件 如果目标是一个目录并且存在，将源文件复制目标目录，并且保持原名 如">
+<meta property="og:description" content="本篇笔记主要是介绍linux文件管理命令、目录管理命令 文件管理touch 用途： 创建文件，改变时间戳   用法： touch 文件名   相关选项： touch -c：不创建文件只改变时间戳 touch -a：改变访问时间和改变时间 touch -m：改变修改时间和改变时间 touch -t：修改到指定时间&amp;nbsp;nano   用途： 通过文本编辑器创建文件&amp;nbsp;stat   用途：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-28T10:50:07.814Z">
+<meta property="og:updated_time" content="2018-05-29T08:00:23.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux文件管理命令笔记">
-<meta name="twitter:description" content="本篇笔记主要是介绍linux文件管理命令中关于文件复制、剪切、移动的内容 cp 用途： 复制文件到指定位置&amp;nbsp;        用法： cp 源 目标&amp;nbsp;   使用规则: cp file1 file2 file3 //前面个默认都为源，最后一个是目标 只能支持复制一个文件到一个文件，多个文件到一个目录，不允许合并文件 如果目标是一个目录并且存在，将源文件复制目标目录，并且保持原名 如">
+<meta name="twitter:description" content="本篇笔记主要是介绍linux文件管理命令、目录管理命令 文件管理touch 用途： 创建文件，改变时间戳   用法： touch 文件名   相关选项： touch -c：不创建文件只改变时间戳 touch -a：改变访问时间和改变时间 touch -m：改变修改时间和改变时间 touch -t：修改到指定时间&amp;nbsp;nano   用途： 通过文本编辑器创建文件&amp;nbsp;stat   用途：">
 
 
 
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  574
+                  879
                 </span>
               
 
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -377,8 +377,48 @@
       
 
       
-        <p>本篇笔记主要是介绍linux文件管理命令中关于文件复制、剪切、移动的内容</p>
-<h2 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h2><ul>
+        <p>本篇笔记主要是介绍linux文件管理命令、目录管理命令</p>
+<h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><h2 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h2><ul>
+<li>用途：<ul>
+<li>创建文件，改变时间戳</li>
+</ul>
+</li>
+<li>用法：<ul>
+<li>touch 文件名</li>
+</ul>
+</li>
+<li>相关选项：<ul>
+<li>touch -c：不创建文件只改变时间戳</li>
+<li>touch -a：改变访问时间和改变时间</li>
+<li>touch -m：改变修改时间和改变时间</li>
+<li>touch -t：修改到指定时间<br>&nbsp;<h2 id="nano"><a href="#nano" class="headerlink" title="nano"></a>nano</h2></li>
+</ul>
+</li>
+<li>用途：<ul>
+<li>通过文本编辑器创建文件<br>&nbsp;<h2 id="stat"><a href="#stat" class="headerlink" title="stat"></a>stat</h2></li>
+</ul>
+</li>
+<li>用途：<ul>
+<li>显示三个时间戳（访问时间access,修改时间modify,改变时间change）<br>&nbsp;<h2 id="file"><a href="#file" class="headerlink" title="file"></a>file</h2></li>
+</ul>
+</li>
+<li>用途：<ul>
+<li>查看文件信息<br>&nbsp;<h2 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h2></li>
+</ul>
+</li>
+<li>用途：<ul>
+<li>删除文件</li>
+</ul>
+</li>
+<li>使用规则：<ul>
+<li>超级管理员使用的rm是rm -i</li>
+<li>要使用非-i选项可以使用-f或者使用\rm</li>
+</ul>
+</li>
+<li>相关选线：<ul>
+<li>rm -r：递归删除可以删除目录<br>&nbsp;<h2 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h2></li>
+</ul>
+</li>
 <li>用途：<ul>
 <li>复制文件到指定位置<br>&nbsp;     </li>
 </ul>
@@ -453,7 +493,36 @@
 </li>
 </ul>
 <hr>
-<p>注：对于超级用户来讲，权限过大容易因为错误操作而造成损失，所以很多命令如cp、mv都有默认的-i选项，提示是否确定进行操作，这些默认选项可以使用type进行查看。</p>
+<p>注：对于超级用户来讲，权限过大容易因为错误操作而造成损失，所以很多命令如cp、mv都有默认的-i选项，提示是否确定进行操作，这些默认选项可以使用type进行查看。<br>&nbsp;</p>
+<h1 id="目录管理"><a href="#目录管理" class="headerlink" title="目录管理"></a>目录管理</h1><h2 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h2><ul>
+<li>用途：<ul>
+<li>显示当前目录下的文件和目录<br>&nbsp;<h2 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h2></li>
+</ul>
+</li>
+<li>用途：<ul>
+<li>切换目录<br>&nbsp;<h2 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h2></li>
+</ul>
+</li>
+<li>用途：<ul>
+<li>显示当前目录<br>&nbsp;<h2 id="mkdir："><a href="#mkdir：" class="headerlink" title="mkdir："></a>mkdir：</h2></li>
+</ul>
+</li>
+<li>用途：<br>  -创建空目录</li>
+<li>使用规则：<ul>
+<li>在同一目录下创建多个分支目录mkdir -pv /mnt/{x/m，y}</li>
+</ul>
+</li>
+<li>相关选项：<ul>
+<li>mkdir -p：一次性创建目录</li>
+<li>mkdir -v：显示创建详细信息<br>&nbsp;<h2 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a>rmdir</h2></li>
+</ul>
+</li>
+<li>用途：<ul>
+<li>删除空目录但是不能删除父目录，如果父目录下只有一个目录可以用-p递归删除<br>&nbsp;<h2 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h2></li>
+</ul>
+</li>
+<li>用途：<br>  -查看目录树</li>
+</ul>
 
       
     </div>
@@ -663,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cp"><span class="nav-number">1.</span> <span class="nav-text">cp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mv"><span class="nav-number">2.</span> <span class="nav-text">mv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install"><span class="nav-number">3.</span> <span class="nav-text">install</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文件管理"><span class="nav-number">1.</span> <span class="nav-text">文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#touch"><span class="nav-number">1.1.</span> <span class="nav-text">touch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nano"><span class="nav-number">1.2.</span> <span class="nav-text">nano</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stat"><span class="nav-number">1.3.</span> <span class="nav-text">stat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#file"><span class="nav-number">1.4.</span> <span class="nav-text">file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rm"><span class="nav-number">1.5.</span> <span class="nav-text">rm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp"><span class="nav-number">1.6.</span> <span class="nav-text">cp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mv"><span class="nav-number">1.7.</span> <span class="nav-text">mv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install"><span class="nav-number">1.8.</span> <span class="nav-text">install</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录管理"><span class="nav-number">2.</span> <span class="nav-text">目录管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ls"><span class="nav-number">2.1.</span> <span class="nav-text">ls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cd"><span class="nav-number">2.2.</span> <span class="nav-text">cd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pwd"><span class="nav-number">2.3.</span> <span class="nav-text">pwd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir："><span class="nav-number">2.4.</span> <span class="nav-text">mkdir：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rmdir"><span class="nav-number">2.5.</span> <span class="nav-text">rmdir</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree"><span class="nav-number">2.6.</span> <span class="nav-text">tree</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -713,7 +782,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.6k字</span>
+  <span class="post-count">博客全站共2.9k字</span>
 </div>
 
         
