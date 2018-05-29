@@ -563,21 +563,29 @@
 <li>touch -c：不创建文件只改变时间戳</li>
 <li>touch -a：改变访问时间和改变时间</li>
 <li>touch -m：改变修改时间和改变时间</li>
-<li>touch -t：修改到指定时间<br>&nbsp;<h2 id="nano"><a href="#nano" class="headerlink" title="nano"></a>nano</h2></li>
+<li>touch -t：修改到指定时间</li>
 </ul>
 </li>
+</ul>
+<h2 id="nano"><a href="#nano" class="headerlink" title="nano"></a>nano</h2><ul>
 <li>用途：<ul>
-<li>通过文本编辑器创建文件<br>&nbsp;<h2 id="stat"><a href="#stat" class="headerlink" title="stat"></a>stat</h2></li>
+<li>通过文本编辑器创建文件</li>
 </ul>
 </li>
+</ul>
+<h2 id="stat"><a href="#stat" class="headerlink" title="stat"></a>stat</h2><ul>
 <li>用途：<ul>
-<li>显示三个时间戳（访问时间access,修改时间modify,改变时间change）<br>&nbsp;<h2 id="file"><a href="#file" class="headerlink" title="file"></a>file</h2></li>
+<li>显示三个时间戳（访问时间access,修改时间modify,改变时间change）</li>
 </ul>
 </li>
+</ul>
+<h2 id="file"><a href="#file" class="headerlink" title="file"></a>file</h2><ul>
 <li>用途：<ul>
-<li>查看文件信息<br>&nbsp;<h2 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h2></li>
+<li>查看文件信息</li>
 </ul>
 </li>
+</ul>
+<h2 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h2><ul>
 <li>用途：<ul>
 <li>删除文件</li>
 </ul>
@@ -588,27 +596,33 @@
 </ul>
 </li>
 <li>相关选线：<ul>
-<li>rm -r：递归删除可以删除目录<br>&nbsp;<h2 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h2></li>
+<li>rm -r：递归删除可以删除目录</li>
 </ul>
 </li>
-<li>用途：<ul>
-<li>复制文件到指定位置<br>&nbsp;     </li>
+</ul>
+<h2 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h2><ul>
+<li><p>用途：</p>
+<ul>
+<li>复制文件到指定位置 </li>
 </ul>
 </li>
-<li>用法：<ul>
-<li>cp 源 目标<br>&nbsp;</li>
+<li><p>用法：</p>
+<ul>
+<li>cp 源 目标</li>
 </ul>
 </li>
-<li>使用规则:<ul>
+<li><p>使用规则:</p>
+<ul>
 <li>cp file1 file2 file3 //前面个默认都为源，最后一个是目标</li>
 <li>只能支持复制一个文件到一个文件，多个文件到一个目录，不允许合并文件</li>
 <li>如果目标是一个目录并且存在，将源文件复制目标目录，并且保持原名</li>
 <li>如果目标和源都是文件，且目标文件存在，将源文件复制过来覆盖目标文件内容</li>
 <li>如果源是多个，目标必须是目录</li>
-<li>源默认情况向不能使目录，只能是文件<br>&nbsp;</li>
+<li>源默认情况向不能使目录，只能是文件</li>
 </ul>
 </li>
-<li>相关选项：<ul>
+<li><p>相关选项：</p>
+<ul>
 <li>cp -r：递归选项，能够把目录作为源<ul>
 <li>如果源是目录，目标是文件，则这个文件作为符号链接指向源目录</li>
 <li>如果源是目录，目标的名字不存在，相当于把源目录复制过去并且更改为目标名字</li>
@@ -623,38 +637,43 @@
 </ul>
 </li>
 </ul>
-<hr>
 <h2 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h2><ul>
-<li>用途：<ul>
-<li>移动文件<br>&nbsp;</li>
+<li><p>用途：</p>
+<ul>
+<li>移动文件</li>
 </ul>
 </li>
-<li>用法：<ul>
-<li>mv 源 目标<br>&nbsp;</li>
+<li><p>用法：</p>
+<ul>
+<li>mv 源 目标</li>
 </ul>
 </li>
-<li>使用规则：<ul>
+<li><p>使用规则：</p>
+<ul>
 <li>使用mv操作目录不需要像cp一样附加-r选项 </li>
 <li>不能把目录mv到文件</li>
-<li>mv a b：相当于把a文件重命名为b文件<br>&nbsp;</li>
+<li>mv a b：相当于把a文件重命名为b文件</li>
 </ul>
 </li>
-<li>相关选项：<ul>
-<li>mv -t：交换目标和源的位置<br>&nbsp;</li>
+<li><p>相关选项：</p>
+<ul>
+<li>mv -t：交换目标和源的位置</li>
 </ul>
 </li>
 </ul>
-<hr>
 <h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><ul>
-<li>用途：<ul>
-<li>复制文件并且更改属性<br>&nbsp;</li>
+<li><p>用途：</p>
+<ul>
+<li>复制文件并且更改属性</li>
 </ul>
 </li>
-<li>用法：<ul>
-<li>install 源 目标<br>&nbsp;</li>
+<li><p>用法：</p>
+<ul>
+<li>install 源 目标</li>
 </ul>
 </li>
-<li>使用规则：<ul>
+<li><p>使用规则：</p>
+<ul>
 <li>install的源不能是目录，只能是文件</li>
 </ul>
 </li>
@@ -664,21 +683,26 @@
 </ul>
 </li>
 </ul>
-<hr>
-<p>注：对于超级用户来讲，权限过大容易因为错误操作而造成损失，所以很多命令如cp、mv都有默认的-i选项，提示是否确定进行操作，这些默认选项可以使用type进行查看。<br>&nbsp;</p>
+<p>注：对于超级用户来讲，权限过大容易因为错误操作而造成损失，所以很多命令如cp、mv都有默认的-i选项，提示是否确定进行操作，这些默认选项可以使用type进行查看。</p>
 <h1 id="目录管理"><a href="#目录管理" class="headerlink" title="目录管理"></a>目录管理</h1><h2 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h2><ul>
 <li>用途：<ul>
-<li>显示当前目录下的文件和目录<br>&nbsp;<h2 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h2></li>
+<li>显示当前目录下的文件和目录</li>
 </ul>
 </li>
+</ul>
+<h2 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h2><ul>
 <li>用途：<ul>
-<li>切换目录<br>&nbsp;<h2 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h2></li>
+<li>切换目录</li>
 </ul>
 </li>
+</ul>
+<h2 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h2><ul>
 <li>用途：<ul>
-<li>显示当前目录<br>&nbsp;<h2 id="mkdir："><a href="#mkdir：" class="headerlink" title="mkdir："></a>mkdir：</h2></li>
+<li>显示当前目录</li>
 </ul>
 </li>
+</ul>
+<h2 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h2><ul>
 <li>用途：<br>  -创建空目录</li>
 <li>使用规则：<ul>
 <li>在同一目录下创建多个分支目录mkdir -pv /mnt/{x/m，y}</li>
@@ -686,14 +710,21 @@
 </li>
 <li>相关选项：<ul>
 <li>mkdir -p：一次性创建目录</li>
-<li>mkdir -v：显示创建详细信息<br>&nbsp;<h2 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a>rmdir</h2></li>
+<li>mkdir -v：显示创建详细信息</li>
 </ul>
 </li>
+</ul>
+<h2 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a>rmdir</h2><ul>
 <li>用途：<ul>
-<li>删除空目录但是不能删除父目录，如果父目录下只有一个目录可以用-p递归删除<br>&nbsp;<h2 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h2></li>
+<li>删除空目录但是不能删除父目录，如果父目录下只有一个目录可以用-p递归删除</li>
 </ul>
 </li>
-<li>用途：<br>  -查看目录树</li>
+</ul>
+<h2 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h2><ul>
+<li>用途：<ul>
+<li>查看目录树</li>
+</ul>
+</li>
 </ul>
 
           
